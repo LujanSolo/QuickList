@@ -1,3 +1,6 @@
+import { add } from "./assets/js/functions.js";
+console.log(add(2,2));
+
 const appSettings = {
   databaseURL: "https://playground-a18ce-default-rtdb.firebaseio.com/"
 }
