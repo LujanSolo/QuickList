@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
-import { getDatabase, ref } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
+import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
 
 const appSettings = {
   databaseURL: "https://playground-a18ce-default-rtdb.firebaseio.com/"
@@ -14,5 +14,6 @@ const addButtonEl = document.getElementById("add-btn");
 
 addButtonEl.addEventListener("click", () => {
   let inputValue = userInputEl.value;
-  console.log(inputValue);
+  push(infoInDB, inputValue);
+  console.log(`${inputValue} added to the database`);
 })
