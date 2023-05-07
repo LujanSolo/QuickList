@@ -15,19 +15,17 @@ const userInputEl = document.getElementById("input-field");
 const addButtonEl = document.getElementById("add-btn");
 let listField = document.getElementById("shopping-list");
 
-
-
 addButtonEl.addEventListener("click", () => {
   let inputValue = userInputEl.value;
   push(infoInDB, inputValue);
   console.log(`${inputValue} added to the database`);
   createListField();
-  clearField();
+  clearInputField();
 
   function createListField() {
     listField.innerHTML += `<li>${inputValue}</li>`;
   };
-  function clearField() {
+  function clearInputField() {
     userInputEl.value = "";
   };
 });
