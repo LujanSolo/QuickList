@@ -11,9 +11,12 @@ const infoInDB = ref(database, "info");
 
 const userInputEl = document.getElementById("input-field");
 const addButtonEl = document.getElementById("add-btn");
+let listField = document.getElementById("shopping-list");
 
 addButtonEl.addEventListener("click", () => {
   let inputValue = userInputEl.value;
   push(infoInDB, inputValue);
   console.log(`${inputValue} added to the database`);
-})
+  listField.innerHTML += `<li>${inputValue}</li>`;
+  userInputEl.value = "";
+});
