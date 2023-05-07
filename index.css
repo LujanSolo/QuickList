@@ -22,6 +22,11 @@ body {
   border-radius: 2rem;
 }
 
+img {
+  width: 15rem;
+  margin: 0 auto;
+}
+
 #input-field {
   color: #432000;
   background-color: #dce1eb;
@@ -30,6 +35,7 @@ body {
   font-size: 2rem;
   border-radius: .75rem;
   border: none;
+  font-family: Rubik, sans-serif;
   text-align: center;
 }
 
@@ -37,6 +43,7 @@ body {
   color: #fdfdfd;
   background-color: #ac485a;
   padding: 1rem 0;
+  font-family: Rubik, sans-serif;
   font-size: 2rem;
   border-radius: .75rem;
   border: none;
