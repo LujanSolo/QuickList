@@ -19,14 +19,13 @@ addButtonEl.addEventListener("click", () => {
   let inputValue = userInputEl.value;
   push(infoInDB, inputValue);
   console.log(`${inputValue} added to the database`);
-  createListField();
+  createListField(inputValue);
   clearInputField();
-
-  function createListField() {
-    listField.innerHTML += `<li>${inputValue}</li>`;
-  };
-  function clearInputField() {
-    userInputEl.value = "";
-  };
 });
 
+function createListField(inherentValue) {
+  listField.innerHTML += `<li>${inherentValue}</li>`;
+};
+function clearInputField() {
+  userInputEl.value = "";
+};
