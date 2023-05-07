@@ -6,12 +6,39 @@
   background-color: #eef0f4;
 }
 
-input {
-  color: #432000;
-  background-color: #dce1eb;
+body {
+  margin: 10rem auto;
+  width: 33rem;
+  
 }
 
-button {
+#container {
+  max-width: 33rem;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  margin: 2rem;
+  border: .3rem solid black;
+  border-radius: 2rem;
+}
+
+#input-field {
+  color: #432000;
+  background-color: #dce1eb;
+  margin: 2rem 0;
+  padding: 1rem 0;
+  font-size: 2rem;
+  border-radius: .75rem;
+  border: none;
+  text-align: center;
+}
+
+#add-btn {
   color: #fdfdfd;
   background-color: #ac485a;
+  padding: 1rem 0;
+  font-size: 2rem;
+  border-radius: .75rem;
+  border: none;
 }
+
