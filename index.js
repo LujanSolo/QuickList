@@ -4,7 +4,8 @@ import {
   getDatabase,
   ref,
   push,
-  onValue
+  onValue,
+  remove
 } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
 
 // database setup
@@ -27,7 +28,7 @@ addButtonEl.addEventListener("click", () => {
   clearInputField();
 });
 
-// onValue function to CRUD from firebase
+// onValue function to update listField upon new entries/deletions via firebase
 onValue(shopListinDB, function(snapshot) {
   let shopListArray = Object.entries(snapshot.val()); // object.entries gets key/value info
   clearListField();
@@ -39,7 +40,7 @@ onValue(shopListinDB, function(snapshot) {
   }
 });
 
-// function to add list item to ul
+// function to add/delete list item to/from ul
 function createListField(item) {
   let itemID = item[0];
   let itemValue = item[1];
@@ -47,6 +48,11 @@ function createListField(item) {
   let newListEl = document.createElement("li");
   newListEl.textContent = itemValue;
   listField.append(newListEl);
+
+  newListEl.addEventListener("click", () => {
+    let exactIndexOfItem = ref(database, `info/${itemID}`);
+    remove(exactIndexOfItem);
+  })
 };
 
 function clearListField() {
