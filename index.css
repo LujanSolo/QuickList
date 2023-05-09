@@ -30,9 +30,9 @@ img {
 #input-field {
   color: #432000;
   background-color: #dce1eb;
-  margin: 2rem 0;
+  margin: 1rem 0;
   padding: 1rem 0;
-  font-size: 2rem;
+  font-size: 1.5rem;
   border-radius: .75rem;
   border: none;
   font-family: Rubik, sans-serif;
@@ -44,8 +44,25 @@ img {
   background-color: #ac485a;
   padding: 1rem 0;
   font-family: Rubik, sans-serif;
-  font-size: 2rem;
+  font-size: 1.5rem;
   border-radius: .75rem;
   border: none;
+  margin-bottom: 1rem;
 }
 
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+ul li {
+  list-style: none;
+  background-color: rgb(255, 251, 251);
+  font-family: Rubik, sans-serif;
+  font-size: 1.5rem;
+  border-radius: .75rem;
+  flex-grow: 1;
+  text-align: center;
+  padding: 1rem;
+  box-shadow: 0 .1rem .2rem rgba(0, 0, 0, 0.2);
+}
