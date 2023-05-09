@@ -52,6 +52,7 @@ img {
 
 #add-btn:hover {
   background-color:rgb(74, 27, 21);
+  cursor: pointer;
 }
 
 ul {
@@ -73,6 +74,7 @@ ul li {
 
 ul li:hover {
   background-color: rgb(241, 227, 149);
+  cursor: pointer;
 }
 
 #list-placeholder {
