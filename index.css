@@ -2,8 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Rubik, sans-serif;
-  background-color: #6382aa;
+  font-family: Monoid, sans-serif;
+  background: gray;
   user-select: none;
 }
 
@@ -21,11 +21,25 @@ body {
   margin: 2rem;
   border: .3rem solid black;
   border-radius: 2rem;
+  background-image: linear-gradient(#d8cf6b, #6382aa);
 }
 
 img {
-  width: 15rem;
-  margin: 0 auto;
+  width: 18rem;
+  margin: 2rem auto;
+  border-radius: .75rem;
+  border: .2rem solid black;
+  box-shadow: .1rem .1rem 1rem .1rem rgb(54, 60, 86);
+
+}
+
+p {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bolder;
+  text-shadow: .1rem .1rem .5rem white;
+  padding: 1rem;
+  background: transparent;
 }
 
 #input-field {
@@ -36,7 +50,7 @@ img {
   font-size: 1.5rem;
   border-radius: .75rem;
   border: none;
-  font-family: Rubik, sans-serif;
+  font-family: Monoid, sans-serif;
   text-align: center;
 }
 
@@ -44,11 +58,11 @@ img {
   color: #fdfdfd;
   background-color: #ac485a;
   padding: 1rem 0;
-  font-family: Rubik, sans-serif;
+  font-family: Monoid, sans-serif;
   font-size: 1.5rem;
   border-radius: .75rem;
   border: none;
-  margin-bottom: 1rem;
+  margin: 1rem 0;
 }
 
 #add-btn:hover {
@@ -60,11 +74,12 @@ ul {
   display: flex;
   flex-wrap: wrap;
   gap: .5rem;
+  background: transparent;
 }
 ul li {
   list-style: none;
   background-color: rgb(255, 251, 251);
-  font-family: Rubik, sans-serif;
+  font-family: Monoid, sans-serif;
   font-size: 1.5rem;
   border-radius: .75rem;
   flex-grow: 1;
@@ -80,7 +95,8 @@ ul li:hover {
 
 #list-placeholder {
   margin: 2rem auto;
-  font-size: 2rem;
+  font-size: 1.2rem;
   text-shadow: .1rem .1rem .3rem white;
   color: #1a1b1d;
+  background: transparent;
 }
