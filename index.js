@@ -20,15 +20,6 @@ const userInputEl = document.getElementById("input-field");
 const addButtonEl = document.getElementById("add-btn");
 let listField = document.getElementById("shopping-list");
 
-onValue(shopListinDB, function (snapshot) {
-  let shopListArray = Object.values(snapshot.val());
-  clearListField();
-  for (let i=0; i < shopListArray.length; i++){
-    createListField(shopListArray[i]);
-  }
-  console.log(shopListArray)
-})
-
 // event listener on "Add Item" click
 addButtonEl.addEventListener("click", () => {
   let inputValue = userInputEl.value;
@@ -36,16 +27,28 @@ addButtonEl.addEventListener("click", () => {
   clearInputField();
 });
 
+// onValue function to CRUD from firebase
+onValue(shopListinDB, function(snapshot) {
+  let shopListArray = Object.entries(snapshot.val()); // object.entries gets key/value info
+  clearListField();
+  for (let i=0; i < shopListArray.length; i++){
+    let currentItem = shopListArray[i];
+    let currentItemID = currentItem[0]; // the key/id
+    let currentItemValue = currentItem[1]; // the value of that key
+    createListField(currentItemValue);
+  }
+});
+
 // function to add list item to ul
 function createListField(inherentValue) {
   listField.innerHTML += `<li>${inherentValue}</li>`;
-}
+};
 
 function clearListField() {
   listField.innerHTML = "";
-}
+};
 
 // function to clear Input Field upon button click
 function clearInputField() {
   userInputEl.value = "";
-}
+};
