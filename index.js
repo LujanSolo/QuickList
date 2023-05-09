@@ -35,13 +35,18 @@ onValue(shopListinDB, function(snapshot) {
     let currentItem = shopListArray[i];
     let currentItemID = currentItem[0]; // the key/id
     let currentItemValue = currentItem[1]; // the value of that key
-    createListField(currentItemValue);
+    createListField(currentItem);
   }
 });
 
 // function to add list item to ul
-function createListField(inherentValue) {
-  listField.innerHTML += `<li>${inherentValue}</li>`;
+function createListField(item) {
+  let itemID = item[0];
+  let itemValue = item[1];
+  
+  let newListEl = document.createElement("li");
+  newListEl.textContent = itemValue;
+  listField.append(newListEl);
 };
 
 function clearListField() {
