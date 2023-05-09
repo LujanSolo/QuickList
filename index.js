@@ -24,8 +24,13 @@ let listField = document.getElementById("shopping-list");
 // event listener on "Add Item" click
 addButtonEl.addEventListener("click", () => {
   let inputValue = userInputEl.value;
-  push(shopListinDB, inputValue);
-  clearInputField();
+  if(inputValue) {
+    push(shopListinDB, inputValue);
+    clearInputField();
+  } else {
+    alert("Empty fields are invalid")
+  }
+  
 });
 
 // onValue function to update listField upon new entries/deletions via firebase
