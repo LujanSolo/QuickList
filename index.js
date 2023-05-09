@@ -29,22 +29,28 @@ addButtonEl.addEventListener("click", () => {
 });
 
 // onValue function to update listField upon new entries/deletions via firebase
-onValue(shopListinDB, function(snapshot) {
-  let shopListArray = Object.entries(snapshot.val()); // object.entries gets key/value info
-  clearListField();
-  for (let i=0; i < shopListArray.length; i++){
-    let currentItem = shopListArray[i];
-    let currentItemID = currentItem[0]; // the key/id
-    let currentItemValue = currentItem[1]; // the value of that key
-    createListField(currentItem);
+onValue(shopListinDB, function (snapshot) {
+
+  if (snapshot.exists()) {
+    let shopListArray = Object.entries(snapshot.val()); // object.entries gets key/value info
+    clearListField();
+    for (let i = 0; i < shopListArray.length; i++) {
+      let currentItem = shopListArray[i];
+      let currentItemID = currentItem[0]; // the key/id
+      let currentItemValue = currentItem[1]; // the value of that key
+      createListField(currentItem);
+    }
+  } else {
+    listField.innerHTML = `<h2 id="list-placeholder">No items here, yet.</h2>`;
   }
+
 });
 
 // function to add/delete list item to/from ul
 function createListField(item) {
   let itemID = item[0];
   let itemValue = item[1];
-  
+
   let newListEl = document.createElement("li");
   newListEl.textContent = itemValue;
   listField.append(newListEl);
