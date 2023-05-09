@@ -29,8 +29,7 @@ addButtonEl.addEventListener("click", () => {
     clearInputField();
   } else {
     alert("Empty fields are invalid")
-  }
-  
+  };
 });
 
 // onValue function to update listField upon new entries/deletions via firebase
