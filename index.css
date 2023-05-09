@@ -38,7 +38,12 @@ p {
   font-size: 1rem;
   font-weight: bolder;
   text-shadow: .1rem .1rem .5rem white;
-  padding: 1rem;
+  padding: 0 1rem 1rem 1rem;
+  background: transparent;
+}
+
+.italics {
+  font-style: italic;
   background: transparent;
 }
 
@@ -56,17 +61,18 @@ p {
 
 #add-btn {
   color: #fdfdfd;
-  background-color: #ac485a;
+  background-color: #9e9a57;
   padding: 1rem 0;
   font-family: Monoid, sans-serif;
   font-size: 1.5rem;
   border-radius: .75rem;
   border: none;
   margin: 1rem 0;
+  text-shadow: .1rem .1rem 1rem black;
 }
 
 #add-btn:hover {
-  background-color:rgb(74, 27, 21);
+  background-color:rgb(21, 25, 74);
   cursor: pointer;
 }
 
