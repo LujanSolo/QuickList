@@ -4,6 +4,7 @@ import {
   getDatabase,
   ref,
   push,
+  onValue
 } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
 
 // database setup
@@ -13,12 +14,22 @@ const appSettings = {
 const app = initializeApp(appSettings);
 const database = getDatabase(app);
 const infoInDB = ref(database, "info");
+const booksInDB = ref(database, "books");
 
 // pull in elements from html
 const userInputEl = document.getElementById("input-field");
 const addButtonEl = document.getElementById("add-btn");
 let listField = document.getElementById("shopping-list");
 
+onValue(infoInDB, function (snapshot) {
+  let infoArray = Object.values(snapshot.val());
+  console.log(infoArray)
+})
+
+onValue(booksInDB, function (snapshot) {
+  let booksArray = Object.values(snapshot.val());
+  console.log(booksArray)
+})
 // event listener on "Add Item" click
 addButtonEl.addEventListener("click", () => {
   let inputValue = userInputEl.value;
